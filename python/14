@@ -1,0 +1,11 @@
+num = int(input("Введите число: "))
+if num >= 0:
+    rez = 0
+    multiplicand = 1
+    while multiplicand <= num:
+        multiplicand *= 2
+        rez += 1
+    print(rez)
+else:
+    print("Ошибка ввода")
+
