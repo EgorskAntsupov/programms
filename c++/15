@@ -1,0 +1,54 @@
+#include <iostream>
+#include <ctime>
+void main()
+{
+    setlocale(LC_ALL, "ru");
+    int b, d, f;
+    int a = 1;
+    int c = 5;
+    int m = 0;
+    for (int i = 1; i <= c; i++) {
+        if ((a == 1) || (a == 0)) {
+            srand(time(0));
+            b = 1 + rand() % 100;
+        }
+        std::cout << "Попробуйте угадать число" << std::endl;
+        if (a == 5){
+            std::cin >> d;
+            std::cout << std::endl;
+            if (d == b){
+                std::cout << "Поздравляем, вы угадали" << std::endl << "Хочешь ещё сыграть? (1-Да)" << std::endl;
+                std::cin >> f;
+                if (f == 1){
+                    c = c * 2;
+                    a = 0;
+                }
+            }
+            else{
+                std::cout << "Вы проиграли. Было загадано:" << b << std::endl << "Хочешь ещё сыграть? (1-Да)" << std::endl;
+                std::cin >> f;
+                if (f == 1){
+                    c = (c * 2) + 1;
+                    a = 0;
+                }
+            }
+        }
+        else {
+            std::cin >> d;
+            std::cout << std::endl;
+            m++;
+            if (d == b){
+                std::cout << "Поздравляем, вы угадали" << std::endl << "Хочешь ещё сыграть? (1-Да)" << std::endl;
+                std::cin >> f;
+                if (f == 1){
+                    c = m + 5;
+                    a = 0;
+                }
+            }
+            else{
+                if (d > b) std::cout << "Загаданное число меньше" << std::endl;
+                else std::cout << "Загаданное число больше" << std::endl; 
+            }
+        }a++;
+    }
+}
