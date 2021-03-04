@@ -1,0 +1,16 @@
+def fact(num):
+    rez = 1
+    if num >= 0:
+        for i in range(1, num+1):
+            rez *= i
+        print(rez)
+    elif num < 0:
+        print("Введите целое положительное число")
+
+
+def main():
+    num = int(input("Введите число: "))
+    fact(num)
+
+
+main()
