@@ -1,0 +1,21 @@
+def degree(num_degree, num):
+    rez = 1.0
+    if num_degree > 0:
+        for i in range(num_degree):
+            rez *= num
+        return int(rez)
+    elif num_degree < 0:
+        for i in range(abs(num_degree)):
+            rez *= 1/num
+        return rez
+    else:
+        return 1
+
+
+def main():
+    num = int(input("Введите число: "))
+    num_degree = int(input("Введите степень: "))
+    print(degree(num_degree, num))
+
+
+main()
