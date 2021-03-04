@@ -1,0 +1,19 @@
+﻿#include <iostream>
+
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    int num;
+    std::cout << "Введите целое число:" << std::endl; std::cin >> num;
+    int rez = 1;
+    if (num >= 0) {
+        for (int i = 1; i <= num; i++)
+        {
+            rez *= i;
+        }
+        std::cout << rez;
+    }
+    else {
+        std::cout << "Введите целое положительное число" << std::endl;
+    }
+}
