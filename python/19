@@ -1,0 +1,19 @@
+Python
+def password(original, new_str, start_list, num):
+    count = 0
+    for i in start_list:
+        count += i
+    if count == num:
+        if 0 not in start_list:
+            print(new_str, end=' ')
+        return
+    for i in range(len(start_list)):
+        start_list[i] += 1
+        password(original, new_str + original[i], start_list, num)
+        start_list[i] -= 1
+
+
+num = int(input('Введите количество символов: '))
+sign = input('Введите символы: ')
+start_list = [0 for i in sign]
+password(sign, '', start_list, num)
