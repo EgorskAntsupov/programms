@@ -1,0 +1,33 @@
+#include <iostream>
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int money, sizen, can_buy, remainder, pricelit, size, price, quantity;
+	std::string alcho;
+	bool flag = true;
+	int sumV = 0;
+	std::string choice;
+	int n_alkaski;
+	std::cout << "Сколько у вас денег и сколько напитков вы видите в магазине?" << std::endl;
+	std::cin >> money >> quantity;
+	for (int i = 0; i < quantity; ++i) {
+		std::cout << "Напиток,сколько стоит,сколько литров в бутылке?" << std::endl;
+		std::cin >> alcho >> price >> size;
+		pricelit = price / size; n_alkaski = money / pricelit;
+		if (n_alkaski >= 1 && n_alkaski > sumV) {
+			choice = alcho;
+			remainder = money - (n_alkaski * pricelit);
+			sizen = size;
+			sumV = n_alkaski;
+			flag = false;
+		}
+	}
+	if (flag == true) std::cout << "-1" << std::endl;
+	else if (flag == false) {
+		std::cout << "Чтобы отлично отдохнуть,вам нужно:" << std::endl;
+		std::cout << choice << " " << sizen << " л" << std::endl;
+		std::cout << sumV << "-всего л" << std::endl;
+		std::cout << remainder << "-сдача" << std::endl;
+	}
+}
